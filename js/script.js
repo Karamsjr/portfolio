@@ -2,35 +2,22 @@
 const themeToggle = document.getElementById('theme-toggle');
 themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-});
-
-// Dynamic Greeting
-function setGreeting() {
-    const hour = new Date().getHours();
-    const greeting = hour < 12 ? "Good Morning 🌞" : 
-                    hour < 18 ? "Good Afternoon ☀️" : 
-                    "Good Evening 🌙";
-    document.getElementById('greeting').textContent = greeting;
-}
-
-// Form Validation
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address');
-        return;
-    }
-    // Submit form logic
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    themeToggle.textContent = isDark ? '☀️' : '🌙';
 });
 
 // Initialize
-window.onload = () => {
-    setGreeting();
+window.addEventListener('DOMContentLoaded', () => {
+    // Load saved theme
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
     }
-};
+    
+    // Time-based greeting
+    const hour = new Date().getHours();
+    const greeting = hour < 12 ? "Good Morning" : 
+                    hour < 18 ? "Good Afternoon" : "Good Evening";
+    document.getElementById('greeting').textContent = `${greeting}, I'm`;
+});

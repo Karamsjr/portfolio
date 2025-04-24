@@ -3,43 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Web Developer Portfolio">
-    <title>Your Name | Home</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Your Name | Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Add this for modern fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Add this for smooth scrolling -->
+        <style>
+          html {
+            scroll-behavior: smooth;
+          }
+        </style>
+      
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="survey.html">Survey</a></li>
-            </ul>
-            <button id="theme-toggle">🌙</button>
-        </nav>
-    </header>
+    <!-- Left-aligned Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <!-- Right-aligned Toggle -->
+        <div class="nav-right">
+            <button id="theme-toggle" aria-label="Dark mode toggle">🌙</button>
+        </div>
+    </nav>
 
-<!-- ① Hero Section (Replace current hero) -->
-<section class="hero">
-    <div class="hero-content">
-      <h1 id="greeting">Hi, I'm <span class="highlight">Your Name</span></h1>
-      <p class="subtitle">Web Developer & Designer</p>
-      <a href="#projects" class="btn btn-primary">View My Work</a>
-    </div>
-  </section>
-  
-  <!-- ② Add this before </body> -->
-  <script>
-    // Typewriter effect for tagline
-    const subtitles = ["Web Developer", "UI/UX Designer", "Freelancer"];
-    let count = 0;
-    setInterval(() => {
-      document.querySelector('.subtitle').textContent = subtitles[count];
-      count = (count + 1) % subtitles.length;
-    }, 2000);
-  </script>
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <h1 id="greeting">Hi, I'm <span class="highlight">Your Name</span></h1>
+            <p class="tagline">Web Developer & Designer</p>
+            <a href="#projects" class="btn">View My Work →</a>
+        </div>
+    </main>
 
     <script src="js/script.js"></script>
 </body>
