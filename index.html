@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Developer Portfolio">
+    <title>Your Name | Home</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="survey.html">Survey</a></li>
+            </ul>
+            <button id="theme-toggle">🌙</button>
+        </nav>
+    </header>
+
+<!-- ① Hero Section (Replace current hero) -->
+<section class="hero">
+    <div class="hero-content">
+      <h1 id="greeting">Hi, I'm <span class="highlight">Your Name</span></h1>
+      <p class="subtitle">Web Developer & Designer</p>
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+    </div>
+  </section>
+  
+  <!-- ② Add this before </body> -->
+  <script>
+    // Typewriter effect for tagline
+    const subtitles = ["Web Developer", "UI/UX Designer", "Freelancer"];
+    let count = 0;
+    setInterval(() => {
+      document.querySelector('.subtitle').textContent = subtitles[count];
+      count = (count + 1) % subtitles.length;
+    }, 2000);
+  </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
