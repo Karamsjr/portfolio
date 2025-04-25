@@ -7,17 +7,12 @@ themeToggle.addEventListener('click', () => {
     themeToggle.textContent = isDark ? '☀️' : '🌙';
 });
 
-// Initialize
+// Initialize on Page Load
 window.addEventListener('DOMContentLoaded', () => {
-    // Load saved theme
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-mode');
         themeToggle.textContent = '☀️';
+    } else {
+        themeToggle.textContent = '🌙';
     }
-    
-    // Time-based greeting
-    const hour = new Date().getHours();
-    const greeting = hour < 12 ? "Good Morning" : 
-                    hour < 18 ? "Good Afternoon" : "Good Evening";
-    document.getElementById('greeting').textContent = `${greeting}, I'm`;
 });
